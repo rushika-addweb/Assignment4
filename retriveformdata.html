@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title> cookie</title>
+<script type="text/javascript">
+function load(){
+var name=document.createElement("input");
+name.setAttribute("type","text");
+name.setAttribute("placeholder","Enter your name");
+name.addEventListener("blur",checkname);
+function checkname()
+{
+var n = /^[a-zA-Z]*$/;
+if(name.value.match(n))
+{
+return true;
+}
+else
+{
+alert('enter your name ');
+}
+}
+
+var email=document.createElement("input");
+email.setAttribute("type","email");
+email.setAttribute("placeholder","Enter your email");
+email.addEventListener("blur",checkmail);
+function checkmail()
+{
+var n = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+if(email.value.match(n))
+{
+return true;
+}
+else
+{
+alert(" entered  email address!");
+}
+}
+
+var number=document.createElement("input");
+number.setAttribute("type","number");
+number.setAttribute("placeholder","Enter your number");
+number.addEventListener("blur",checknumber);
+function checknumber()
+{
+var n = /^\d{10}$/;
+if(number.value.match(n))
+{
+return true;
+}
+else
+{
+alert("enter Phone Number");
+}
+}
+
+var submit=document.createElement("input");
+submit.setAttribute("type","submit");
+submit.addEventListener("click",cookie);
+function cookie()
+{
+document.cookie = "name=" + name.value;
+document.cookie = "email=" + email.value;
+document.cookie = "number=" + number.value;
+
+document.write(document.cookie);
+}
+
+document.body.appendChild(name);
+document.body.appendChild(email);
+document.body.appendChild(number);
+document.body.appendChild(submit);
+}
+</script>
+</head>
+<body onload="load();">
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Calculator</title>
+
+<style>
+   body{
+    background:yellow;
+   }
+
+    .title{
+border-radius: 10px;
+margin-bottom: 10px;
+text-align:center;
+width: 210px;
+color:#ff4456;
+border: solid black 1px;
+}
+
+input[type="button"]
+{
+border-radius: 10px;
+background-color:green;
+color: white;
+border-color:blue ;
+width:100%;
+}
+input[type="text"]
+{
+border-radius: 12px;
+text-align: right;
+background-color:white;
+border-color: black ;
+width:95%
+}
+</style>
+<script>
+
+function display(val)
+{
+document.getElementById("cal").value+=val
+}
+
+function solve()
+{
+let x = document.getElementById("cal").value
+let y = eval(x)
+document.getElementById("cal").value = y
+}
+function allclr()
+{
+document.getElementById("cal").value = ""
+}
+
+function clr()
+{
+document.getElementById("cal").value = "0"
+}
+</script>
+</head>
+
+
+<table border="1"  align="center" >
+    <h1 align="center" > Calculator</h1>
+<tr>
+<td><input type="button" value="allclr" onclick="allclr()"> </td>
+<td><input type="button" value="clr" onclick="clr()"> </td>
+<td colspan="3"><input type="text" id="cal"></td>
+
+</tr>
+<tr>
+<td><input type="button" value="+" onclick="display('+')"> </td>
+<td><input type="button" value="1" onclick="display('1')"> </td>
+<td><input type="button" value="2" onclick="display('2')"> </td>
+<td><input type="button" value="3" onclick="display('3')"> </td>
+</tr>
+<tr>
+<td><input type="button" value="-" onclick="display('-')"> </td>
+<td><input type="button" value="4" onclick="display('4')"> </td>
+<td><input type="button" value="5" onclick="display('5')"> </td>
+<td><input type="button" value="6" onclick="display('6')"> </td>
+</tr>
+<tr>
+<td><input type="button" value="*" onclick="display('*')"> </td>
+<td><input type="button" value="7" onclick="display('7')"> </td>
+<td><input type="button" value="8" onclick="display('8')"> </td>
+<td><input type="button" value="9" onclick="display('9')"> </td>
+</tr>
+<tr>
+<td><input type="button" value="/" onclick="display('/')"> </td>
+<td><input type="button" value="." onclick="display('.')"> </td>
+<td><input type="button" value="0" onclick="display('0')"> </td>
+<td><input type="button" value="=" onclick="solve()"> </td>
+</tr>
+</table>
+</body>
+
+
+</html>
